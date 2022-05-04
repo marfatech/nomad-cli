@@ -1,0 +1,23 @@
+name: 'Nomad Cli'
+description: 'nomad cli for run varius commands'
+inputs:
+  token:
+    description: 'Token used to authenticate with a nomad server'
+    required: true
+  address:
+    description: 'Address of the nomad server'
+    required: true
+  nomad_cli_args:
+    description: 'Args for nomad-cli'
+    required: false
+    default: ''
+runs:
+  using: 'docker'
+  image: 'docker://ghcr.io/marfatech/nnomad-cli:v0.0.1'
+  env:
+    NOMAD_TOKEN: ${{ inputs.token }}
+    NOMAD_ADDR: ${{ inputs.address }}
+    NOMAD_ARGS: ${{ inputs.nomad_cli_args }}
+branding:
+  icon: 'upload-cloud'
+  color: 'green'
