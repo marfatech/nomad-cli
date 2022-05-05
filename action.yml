@@ -9,15 +9,15 @@ inputs:
     required: true
   nomad_cli_args:
     description: 'Args for nomad-cli'
-    required: false
-    default: ''
+    required: true
+    default: 'nomad'
 runs:
   using: 'docker'
   image: 'hendrikmaus/nomad-cli:1.2.3'
   env:
     NOMAD_TOKEN: ${{ inputs.token }}
     NOMAD_ADDR: ${{ inputs.address }}
-  entrypoint: ${{ inputs.nomad_cli_args }}
+  args: ${{ inputs.nomad_cli_args }}
 
 branding:
   icon: 'upload-cloud'
