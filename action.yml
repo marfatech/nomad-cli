@@ -13,7 +13,7 @@ inputs:
     default: ''
 runs:
   using: 'docker'
-  image: 'docker://ghcr.io/marfatech/nnomad-cli:v0.0.1'
+  image: 'docker://ghcr.io/marfatech/nomad-cli:v0.0.1'
   env:
     NOMAD_TOKEN: ${{ inputs.token }}
     NOMAD_ADDR: ${{ inputs.address }}
