@@ -13,7 +13,7 @@ inputs:
     default: 'nomad'
 runs:
   using: 'docker'
-  image: 'hendrikmaus/nomad-cli:1.2.3'
+  image: 'docker://hendrikmaus/nomad-cli:1.2.3'
   env:
     NOMAD_TOKEN: ${{ inputs.token }}
     NOMAD_ADDR: ${{ inputs.address }}
