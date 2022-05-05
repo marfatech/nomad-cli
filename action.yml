@@ -17,7 +17,8 @@ runs:
   env:
     NOMAD_TOKEN: ${{ inputs.token }}
     NOMAD_ADDR: ${{ inputs.address }}
-  args: ${{ inputs.nomad_cli_args }}
+  args:
+    - ${{ inputs.nomad_cli_args }}
 
 branding:
   icon: 'upload-cloud'
