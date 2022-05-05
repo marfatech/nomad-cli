@@ -13,11 +13,12 @@ inputs:
     default: ''
 runs:
   using: 'docker'
-  image: 'docker://ghcr.io/marfatech/nomad-cli:v0.0.1'
+  image: 'hendrikmaus/nomad-cli:1.2.3'
   env:
     NOMAD_TOKEN: ${{ inputs.token }}
     NOMAD_ADDR: ${{ inputs.address }}
-    NOMAD_ARGS: ${{ inputs.nomad_cli_args }}
+  entrypoint: ${{ inputs.nomad_cli_args }}
+
 branding:
   icon: 'upload-cloud'
   color: 'green'
