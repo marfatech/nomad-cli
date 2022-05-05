@@ -13,11 +13,10 @@ inputs:
     default: 'nomad'
 runs:
   using: 'docker'
-  image: 'docker://hendrikmaus/nomad-cli:1.2.3'
+  image: 'docker://ghcr.io/marfatech/nomad-cli:v0.0.1'
   env:
     NOMAD_TOKEN: ${{ inputs.token }}
     NOMAD_ADDR: ${{ inputs.address }}
-  entrypoint: "sh"
   args:
     - ${{ inputs.nomad_cli_args }}
 
