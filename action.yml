@@ -17,7 +17,7 @@ runs:
   env:
     NOMAD_TOKEN: ${{ inputs.token }}
     NOMAD_ADDR: ${{ inputs.address }}
-  entrypoint: 'sh -c nomad'
+  entrypoint: 'nomad'
   args:
     - ${{ inputs.nomad_cli_args }}
 
